@@ -1,7 +1,7 @@
 {
   "name": "angular-eha.cordova.photobooth",
   "description": "An Angular.js directive providing an interface to org.apache.cordova camera via angular-eha.cordova.camera",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "authors": [
     "oss@ehealthafrica.org"
   ],

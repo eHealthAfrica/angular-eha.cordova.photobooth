@@ -1,0 +1,30 @@
+<div class="component photobooth">
+  <div ng-if="vm.hasCamera">
+    <div ng-if="vm.uri">
+      <img
+      src="{{vm.uri}}"
+      alt=""
+      ng-if="vm.uri"
+      class="picture" />
+      <br />
+    </div>
+    <button
+      class="btn btn-block btn-primary"
+      type="button"
+      ng-click="vm.getPicture()">
+      <i class="fa fa-camera"></i>
+      <span ng-if="!vm.uri" translate>Take Photo</span>
+      <span ng-if="vm.uri" translate>Re-take Photo</span>
+    </button>
+    <button
+      class="btn btn-block btn-secondary"
+      type="button"
+      ng-if="vm.uri"
+      ng-click="vm.removePicture()">
+      <span translate>Remove Photo</span>
+    </button>
+  </div>
+  <div ng-if="!vm.hasCamera">
+    <div class="alert alert-info"><span translate>Camera Module Not Found. Unable to take photograph.</span></div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "name": "angular-eha.cordova.photobooth",
+  "description": "An Angular.js directive providing an interface to org.apache.cordova camera via angular-eha.cordova.camera",
+  "version": "0.0.0",
+  "authors": [
+    "oss@ehealthafrica.org"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "cordova",
+    "camera",
+    "directive",
+    "angularjs"
+  ],
+  "main": "dist/angular-eha.cordova.photobooth.templates.js",
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-eha.cordova.camera": "~1.0.0"
+  }
+}

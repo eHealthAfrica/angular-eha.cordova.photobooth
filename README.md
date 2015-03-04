@@ -1,6 +1,6 @@
 # angular-eha.cordova.photobooth
 
-[![Build Status](https://travis-ci.org/eHealthAfrica/angular-eha.cordova.photobooth.svg?branch=master)](https://travis-ci.org/eHealthAfrica/angular-eha.cordova.photobooth)
+[![Build Status](https://travis-ci.org/eHealthAfrica/angular-eha.cordova.photobooth.svg?branch=master)](https://travis-ci.org/eHealthAfrica/angular-eha.cordova.photobooth) ![Dependecy Status](https://david-dm.org/eHealthAfrica/angular-eha.cordova.photobooth.svg) ![Dev Dependecy Status](https://david-dm.org/eHealthAfrica/angular-eha.cordova.photobooth/dev-status.svg)
 
 ## Usage
 

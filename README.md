@@ -8,11 +8,11 @@
 
 Install with npm:
 
-    npm install --save git@github.com:eHealthAfrica/angular-eha.cordova.photobooth.git
+    npm install --save angular-eha.cordova.photobooth
 
 Or alternatively bower:
 
-    bower install --save git@github.com:eHealthAfrica/angular-eha.cordova.photobooth.git
+    bower install --save angular-eha.cordova.photobooth
 
 The distribution bundle comes in 2 flavours, one with templates, one without - as well as providing both minified and unminfied versions of both, so take your pick:
 

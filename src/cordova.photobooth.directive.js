@@ -55,6 +55,13 @@
           mimeType: 'image/jpeg'
         };
 
+        var getDataUri = function(picture) {
+          return encodeURI('data:' +
+                           options.mimeType + ';' +
+                           options.encoding + ',' +
+                           picture);
+        };
+
         vm.hasCamera = false;
 
         // Check @encodingType attribute
@@ -67,18 +74,18 @@
                      '" is not supported');
         }
 
+        if (scope.model.data) {
+          vm.uri = getDataUri(scope.model.data);
+
+          // you can't remove existing photos, only replace them
+          vm.hideRemoveButton = true;
+        }
+
         document.addEventListener('deviceready', function() {
           if (navigator.camera) {
             vm.hasCamera = true;
           }
         });
-
-        var getDataUri = function(picture) {
-          return encodeURI('data:' +
-                           options.mimeType + ';' +
-                           options.encoding + ',' +
-                           picture);
-        };
 
         var getEncodingType = function() {
           return options.encodingType === 0 ? 'jpeg' : 'png';
@@ -94,6 +101,9 @@
               encodingType: getEncodingType(),
               data: picture
             };
+            if (scope.callback) {
+              scope.callback({ data: picture });
+            }
           })
           .catch(function(err) {
             if (err) {

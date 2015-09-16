@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - unreleased
 
+### Feature
+- Enable display of an existing image
+- Enable replacing an existing image
+
 ## v1.0.1 - 04/03/2015
 
 ### Fixed

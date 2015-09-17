@@ -42,6 +42,7 @@
       restrict: 'E',
       scope: {
         model: '=',
+        callback: '&',
         encodingType: '@encodingType'
       },
       templateUrl: 'templates/cordova.photobooth.directive.tpl.html',

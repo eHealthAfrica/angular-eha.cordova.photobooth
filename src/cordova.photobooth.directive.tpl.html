@@ -19,7 +19,7 @@
     <button
       class="btn btn-block btn-secondary"
       type="button"
-      ng-if="vm.uri"
+      ng-if="vm.uri && !vm.hideRemoveButton"
       ng-click="vm.removePicture()">
       <span translate>Remove Photo</span>
     </button>

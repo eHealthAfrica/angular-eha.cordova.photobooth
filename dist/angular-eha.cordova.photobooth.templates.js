@@ -41,7 +41,8 @@
     return {
       restrict: 'E',
       scope: {
-        model: '=model',
+        model: '=',
+        callback: '&',
         encodingType: '@encodingType'
       },
       templateUrl: 'templates/cordova.photobooth.directive.tpl.html',
@@ -53,6 +54,13 @@
           encoding: 'base64',
           encodingType: 0, // 0: JPEG  1: PNG
           mimeType: 'image/jpeg'
+        };
+
+        var getDataUri = function(picture) {
+          return encodeURI('data:' +
+                           options.mimeType + ';' +
+                           options.encoding + ',' +
+                           picture);
         };
 
         vm.hasCamera = false;
@@ -67,18 +75,18 @@
                      '" is not supported');
         }
 
+        if (scope.model && scope.model.data) {
+          vm.uri = getDataUri(scope.model.data);
+
+          // you can't remove existing photos, only replace them
+          vm.hideRemoveButton = true;
+        }
+
         document.addEventListener('deviceready', function() {
           if (navigator.camera) {
             vm.hasCamera = true;
           }
         });
-
-        var getDataUri = function(picture) {
-          return encodeURI('data:' +
-                           options.mimeType + ';' +
-                           options.encoding + ',' +
-                           picture);
-        };
 
         var getEncodingType = function() {
           return options.encodingType === 0 ? 'jpeg' : 'png';
@@ -94,6 +102,9 @@
               encodingType: getEncodingType(),
               data: picture
             };
+            if (scope.callback) {
+              scope.callback({ data: picture });
+            }
           })
           .catch(function(err) {
             if (err) {
@@ -142,7 +153,7 @@ angular.module("templates/cordova.photobooth.directive.tpl.html", []).run(["$tem
     "    <button\n" +
     "      class=\"btn btn-block btn-secondary\"\n" +
     "      type=\"button\"\n" +
-    "      ng-if=\"vm.uri\"\n" +
+    "      ng-if=\"vm.uri && !vm.hideRemoveButton\"\n" +
     "      ng-click=\"vm.removePicture()\">\n" +
     "      <span translate>Remove Photo</span>\n" +
     "    </button>\n" +

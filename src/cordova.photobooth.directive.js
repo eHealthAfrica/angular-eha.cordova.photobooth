@@ -41,7 +41,7 @@
     return {
       restrict: 'E',
       scope: {
-        model: '=model',
+        model: '=',
         encodingType: '@encodingType'
       },
       templateUrl: 'templates/cordova.photobooth.directive.tpl.html',
@@ -74,7 +74,7 @@
                      '" is not supported');
         }
 
-        if (scope.model.data) {
+        if (scope.model && scope.model.data) {
           vm.uri = getDataUri(scope.model.data);
 
           // you can't remove existing photos, only replace them

@@ -105,18 +105,11 @@ module.exports = function(grunt) {
     },
     jshint: {
       all: ['src/**/*.js', 'tests/**/*.spec.js']
-    },
-    jscs: {
-      src: ['src/**/*.js', 'tests/**/*.spec.js'],
-      options: {
-        config: ".jscsrc",
-        requireCurlyBraces: [ "if" ]
-      }
     }
   });
 
   grunt.registerTask('templates', ['html2js']);
-  grunt.registerTask('test', ['html2js', 'jshint', 'jscs', 'karma:unit']);
+  grunt.registerTask('test', ['html2js', 'jshint', 'karma:unit']);
   grunt.registerTask('test:watch', ['karma:watch']);
 
   grunt.registerTask('build', function() {
@@ -138,6 +131,6 @@ module.exports = function(grunt) {
     ])
   })
 
-  grunt.registerTask('default', ['jshint', 'jscs', 'build']);
+  grunt.registerTask('default', ['jshint', 'build']);
 
 };

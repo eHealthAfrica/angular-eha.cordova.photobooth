@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - unreleased
 
+## v1.1.3 - 29/09/2015
+
+### Chores
+- Ensure all version numbers match
+
 ## v1.1.2 - 29/09/2015
 
 ### Fixed

@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - unreleased
 
-## v1.1.1 - 29/09/2015
+## v1.1.2 - 29/09/2015
 
 ### Fixed
 - Fix an encoding type error which was thrown but didn't affect anything
